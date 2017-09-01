@@ -8,8 +8,12 @@ class CataloguePage extends Component {
         return (
             <div className="Catalogue">
                 <h1>Catalogue</h1>
-                <BootstrapTable>
-                    <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+
+                <input placeholder="Search..."></input><br />
+                <button type="submit">Submit</button>
+
+                <BootstrapTable data={this.props.catalog}>
+                    <TableHeaderColumn dataField='_id' isKey>Product ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
                     <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
                 </BootstrapTable>
