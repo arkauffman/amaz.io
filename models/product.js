@@ -10,10 +10,4 @@ var productSchema = new Schema({
     timestamps: true
 });
 
-var orderSchema = new Schema({
-   products: [productSchema] 
-}, {
-    timestamps: true
-});
-
-module.exports = mongoose.model('Order', orderSchema);
+module.exports = mongoose.model('Product', productSchema);
