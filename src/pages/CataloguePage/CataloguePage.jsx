@@ -11,9 +11,9 @@ class CataloguePage extends Component {
 
                 <input placeholder="Search..."></input><br />
                 <button type="submit">Submit</button>
-                
-                <BootstrapTable>
-                    <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+
+                <BootstrapTable data={this.props.catalog}>
+                    <TableHeaderColumn dataField='_id' isKey>Product ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
                     <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
                 </BootstrapTable>

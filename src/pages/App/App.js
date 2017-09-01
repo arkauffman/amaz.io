@@ -13,6 +13,26 @@ import CheckoutPage from './../CheckoutPage/CheckoutPage';
 import ConfirmationPage from './../ConfirmationPage/ConfirmationPage';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      catalog: null,
+      cart: null,
+      search: null
+    }
+  }
+
+  handleSearch = () => {
+    fetch('/api/products', {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(response => console.log(response));
+  }
+
+  componentDidMount() {
+    return this.handleSearch();
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,7 +44,9 @@ class App extends Component {
                 <Home />
               }/>
               <Route exact path='/catalogue' render={() => 
-                <CataloguePage />
+                <CataloguePage 
+                  handleSearch={this.handleSearch}
+                />
               }/>
               <Route exact path='/checkout' render={() => 
                 <CheckoutPage />
