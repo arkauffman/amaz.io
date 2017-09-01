@@ -11,8 +11,8 @@ seed.then(() => {
   return Product.create(API)
 })
 
-.then((students) => {
-  console.log(students)
+.then((products) => {
+  console.log(products)
   require('mongoose').connection.close();
   process.exit();
 })

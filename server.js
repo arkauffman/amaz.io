@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.json());
 
-
+app.use('/api/products', require('./routes/api/products'));
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join__dirname, 'build', 'index.html');
